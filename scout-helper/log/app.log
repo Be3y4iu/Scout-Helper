@@ -1,0 +1,2 @@
+2020-11-27 15:13:00.331 ERROR [main] [com.alekseydorokhov.scouthelper.logger.LoggerTest] [writeSomeLogs] [com.alekseydorokhov.scouthelper.logger.LoggerTest.writeSomeLogs(LoggerTest.java:18)] - ErrorMessage
+2020-11-27 15:13:00.349 FATAL [main] [com.alekseydorokhov.scouthelper.logger.LoggerTest] [writeSomeLogs] [com.alekseydorokhov.scouthelper.logger.LoggerTest.writeSomeLogs(LoggerTest.java:19)] - FatalMessage
