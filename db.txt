@@ -4,3 +4,5 @@ String: name
 Enum: Position
 Enum: Current Team
 int: age
+
+Builder pattern
