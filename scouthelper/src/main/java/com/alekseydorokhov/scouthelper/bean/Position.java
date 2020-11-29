@@ -13,5 +13,6 @@ public enum Position {
     LEFT_FORWARD,
     RIGHT_FORWARD,
     CENTRAL_FORWARD,
-    DRAWN_STRIKER
+    DRAWN_STRIKER,
+    FORWARD
 }

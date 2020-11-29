@@ -42,7 +42,7 @@ public class PlayerBuilderTest {
         PlayerBuilder playerBuilder = new PlayerBuilder();
         Player builded = playerBuilder.setName(name)
                 .setPosition(position)
-                .setCurrentTeam(club)
+                .setCurrentClub(club)
                 .setAge(age)
                 .build();
         assertEquals(builded, player);
@@ -53,7 +53,7 @@ public class PlayerBuilderTest {
         Player player = new Player(name, position, club, age);
         PlayerBuilder playerBuilder = new PlayerBuilder();
         Player builded = playerBuilder.setAge(age)
-                .setCurrentTeam(club)
+                .setCurrentClub(club)
                 .setPosition(position)
                 .setName(name)
                 .build();
@@ -66,7 +66,7 @@ public class PlayerBuilderTest {
         PlayerBuilder playerBuilder = new PlayerBuilder();
         Player builded = playerBuilder.setPosition(position)
                 .setAge(age)
-                .setCurrentTeam(club)
+                .setCurrentClub(club)
                 .setName(name)
                 .build();
         assertEquals(builded, player);

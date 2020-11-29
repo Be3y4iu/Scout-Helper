@@ -37,15 +37,11 @@ public class PlayerTest {
     }
 
     @Test(dataProvider = "players")
-    public void checkCreation(Object[] args){
-        String name = args[0].toString();
-        Position position = (Position)args[1];
-        Club team = (Club)args[2];
-        int age = (int)args[3];
-        Player player = new Player(name, position, team, age);
+    public void checkCreation(String name, Position position, Club club, int age){
+        Player player = new Player(name, position, club, age);
         assertEquals(player.getName(), name);
         assertEquals(player.getPosition(), position);
-        assertEquals(player.getCurrentTeam(), team);
+        assertEquals(player.getCurrentClub(), club);
         assertEquals(player.getAge(), age);
         //logger.info("id: " + player.getId());
     }

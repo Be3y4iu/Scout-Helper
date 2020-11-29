@@ -11,7 +11,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import java.util.Objects;
 
-//@Entity
+@Entity
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -22,13 +22,13 @@ public class Player {
     private long id;
     private String name;
     private Position position;
-    private Club currentTeam;
+    private Club currentClub;
     private int age;
 
-    public Player(String name, Position position, Club currentTeam, int age) {
+    public Player(String name, Position position, Club currentClub, int age) {
         this.name = name;
         this.position = position;
-        this.currentTeam = currentTeam;
+        this.currentClub = currentClub;
         this.age = age;
     }
 
@@ -40,11 +40,11 @@ public class Player {
         return age == player.age &&
                 Objects.equals(name, player.name) &&
                 position == player.position &&
-                currentTeam == player.currentTeam;
+                currentClub == player.currentClub;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, position, currentTeam, age);
+        return Objects.hash(name, position, currentClub, age);
     }
 }
