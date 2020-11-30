@@ -1,0 +1,21 @@
+.img-banner {
+    height: 600px;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.card-img-top {
+    height: 150px;
+    width: 100px;
+}
+
+.card-body{
+    flex: none;
+}
+
+footer{
+    padding-top: 20px;
+    background-color: #212121;
+    color: #fff;
+    min-height: 100px;
+}
