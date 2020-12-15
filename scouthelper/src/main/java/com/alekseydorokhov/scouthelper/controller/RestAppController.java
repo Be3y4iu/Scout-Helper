@@ -54,7 +54,7 @@ public class RestAppController {
         Player player = converter.convertToPlayer(playerDTO);
         logger.info(player);
         if(!validator.isValidPlayer(player))
-            return ResponseEntity.status(400).body("Some of player characteristics are invalid");
+            return ResponseEntity.status(400).body("Some player characteristics are invalid");
         repositoryService.add(player);
         return ResponseEntity.ok("Player has been added");
     }

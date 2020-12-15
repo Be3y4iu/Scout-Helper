@@ -12,6 +12,10 @@ public class PlayerConverter {
                 .setPosition(playerDTO.getPosition())
                 .setCurrentClub(playerDTO.getCurrentClub())
                 .setAge(playerDTO.getAge())
+                .setAttackStat(playerDTO.getAttackStat())
+                .setDefenceStat(playerDTO.getDefenceStat())
+                .setExperienceStat(playerDTO.getExperienceStat())
+                .setWorkingLeg(playerDTO.getWorkingLeg())
                 .build();
     }
 
@@ -20,6 +24,10 @@ public class PlayerConverter {
                 .setPosition(player.getPosition())
                 .setCurrentClub(player.getCurrentClub())
                 .setAge(player.getAge())
+                .setAttackStat(player.getAttackStat())
+                .setDefenceStat(player.getDefenceStat())
+                .setExperienceStat(player.getExperienceStat())
+                .setWorkingLeg(player.getWorkingLeg())
                 .buildDTO();
     }
 

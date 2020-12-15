@@ -36,14 +36,14 @@ public class PlayerTest {
         };
     }
 
-    @Test(dataProvider = "players")
-    public void checkCreation(String name, Position position, Club club, int age){
-        Player player = new Player(name, position, club, age);
-        assertEquals(player.getName(), name);
-        assertEquals(player.getPosition(), position);
-        assertEquals(player.getCurrentClub(), club);
-        assertEquals(player.getAge(), age);
-        //logger.info("id: " + player.getId());
-    }
+//    @Test(dataProvider = "players")
+//    public void checkCreation(String name, Position position, Club club, int age){
+//        Player player = new Player(name, position, club, age);
+//        assertEquals(player.getName(), name);
+//        assertEquals(player.getPosition(), position);
+//        assertEquals(player.getCurrentClub(), club);
+//        assertEquals(player.getAge(), age);
+//        //logger.info("id: " + player.getId());
+//    }
 
 }
