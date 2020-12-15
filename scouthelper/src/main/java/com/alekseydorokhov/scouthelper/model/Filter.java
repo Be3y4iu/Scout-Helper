@@ -1,13 +1,11 @@
 package com.alekseydorokhov.scouthelper.model;
 
-import com.alekseydorokhov.scouthelper.domain.Player;
 import org.springframework.data.jpa.domain.Specification;
 
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Predicate;
 import javax.persistence.criteria.Root;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -22,17 +20,20 @@ public class Filter implements Specification {
         conditions = new HashMap<>();
     }
 
-    public void addCondition(String field, Object condition){
+    public void addCondition(String field, Object condition) {
         conditions.put(field, condition);
     }
 
     @Override
     public Predicate toPredicate(Root root, CriteriaQuery criteriaQuery, CriteriaBuilder criteriaBuilder) {
         List<Predicate> predicates = buildPredicates(root, criteriaQuery, criteriaBuilder);
-        return predicates.size() > 1
-                ? criteriaBuilder.and(predicates.toArray(new Predicate[predicates.size()]))
-                : predicates.get(0);
+        if (predicates.size() > 1)
+            return criteriaBuilder.and(predicates.toArray(new Predicate[predicates.size()]));
+        if (predicates.size() == 1)
+            return predicates.get(0);
+        return criteriaBuilder.isNotNull(root);
     }
+
 
     public Predicate buildPredicate(String field, Object condition,
                                     Root root, CriteriaQuery criteriaQuery, CriteriaBuilder criteriaBuilder) {

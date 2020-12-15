@@ -33,7 +33,7 @@ public class WebController {
         List<Player> players = repositoryService.getPlayerRepository().findAll(criteria.createSpecification());
         model.addAttribute("players", players);
         System.out.println("OGO");
-        return "redirect:/";
+        return "index";
     }
 
     @GetMapping("players/{id}")
