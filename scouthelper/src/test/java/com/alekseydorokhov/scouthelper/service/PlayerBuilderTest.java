@@ -36,40 +36,40 @@ public class PlayerBuilderTest {
         };
     }
 
-    @Test(dataProvider = "players")
-    public void normalOrderTest(String name, Position position, Club club, int age){
-        Player player = new Player(name, position, club, age);
-        PlayerBuilder playerBuilder = new PlayerBuilder();
-        Player builded = playerBuilder.setName(name)
-                .setPosition(position)
-                .setCurrentClub(club)
-                .setAge(age)
-                .build();
-        assertEquals(builded, player);
-    }
-
-    @Test(dataProvider = "players")
-    public void reversedOrderTest(String name, Position position, Club club, int age){
-        Player player = new Player(name, position, club, age);
-        PlayerBuilder playerBuilder = new PlayerBuilder();
-        Player builded = playerBuilder.setAge(age)
-                .setCurrentClub(club)
-                .setPosition(position)
-                .setName(name)
-                .build();
-        assertEquals(builded, player);
-    }
-
-    @Test(dataProvider = "players")
-    public void randomOrderTest(String name, Position position, Club club, int age){
-        Player player = new Player(name, position, club, age);
-        PlayerBuilder playerBuilder = new PlayerBuilder();
-        Player builded = playerBuilder.setPosition(position)
-                .setAge(age)
-                .setCurrentClub(club)
-                .setName(name)
-                .build();
-        assertEquals(builded, player);
-    }
+//    @Test(dataProvider = "players")
+//    public void normalOrderTest(String name, Position position, Club club, int age){
+//        Player player = new Player(name, position, club, age);
+//        PlayerBuilder playerBuilder = new PlayerBuilder();
+//        Player builded = playerBuilder.setName(name)
+//                .setPosition(position)
+//                .setCurrentClub(club)
+//                .setAge(age)
+//                .build();
+//        assertEquals(builded, player);
+//    }
+//
+//    @Test(dataProvider = "players")
+//    public void reversedOrderTest(String name, Position position, Club club, int age){
+//        Player player = new Player(name, position, club, age);
+//        PlayerBuilder playerBuilder = new PlayerBuilder();
+//        Player builded = playerBuilder.setAge(age)
+//                .setCurrentClub(club)
+//                .setPosition(position)
+//                .setName(name)
+//                .build();
+//        assertEquals(builded, player);
+//    }
+//
+//    @Test(dataProvider = "players")
+//    public void randomOrderTest(String name, Position position, Club club, int age){
+//        Player player = new Player(name, position, club, age);
+//        PlayerBuilder playerBuilder = new PlayerBuilder();
+//        Player builded = playerBuilder.setPosition(position)
+//                .setAge(age)
+//                .setCurrentClub(club)
+//                .setName(name)
+//                .build();
+//        assertEquals(builded, player);
+//    }
 
 }
