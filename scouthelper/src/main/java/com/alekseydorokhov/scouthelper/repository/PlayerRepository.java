@@ -11,5 +11,5 @@ import java.util.Set;
 
 public interface PlayerRepository extends CrudRepository<Player, Long> {
     public List<Player> findAll(Specification<Player> specification);
-    public Set<Player> findByAgeAndNameAndDefenceStat(Player player, int age, DefenceStat stat);
+    public boolean existsByName(String name);
 }

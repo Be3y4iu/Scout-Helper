@@ -37,11 +37,6 @@
                         <input name="age" type="number" class="form-control formTag"
                                placeholder="Возраст">
                     </div>
-                    <div  class="form-group">
-                        <p>Всего голов</p>
-                        <input name="totalGoals" type="number" class="form-control formTag"
-                               placeholder="Всего голов">
-                    </div>
                     <div class="form-group row">
                         <div class="col-sm-1">
                             <button type="button" onclick="doFilter()" class="btn btn-primary">Найти</button>
@@ -51,7 +46,7 @@
             </div>
         </div>
         <div th:if="${#lists.isEmpty(players)}" class="nothing-found">
-            <h2>Игроки не наййдены</h2>
+            <h2>Игроки не найдены</h2>
         </div>
 
         <div class="cards" th:if="${not #lists.isEmpty(players)}">

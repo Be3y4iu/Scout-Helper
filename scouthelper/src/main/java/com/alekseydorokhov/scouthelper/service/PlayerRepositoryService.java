@@ -13,8 +13,11 @@ public class PlayerRepositoryService {
     @Autowired
     private PlayerRepository playerRepository;
 
-    public void add(Player player){
+    public boolean add(Player player){
+        if(playerRepository.existsByName(player.getName()))
+            return false;
         playerRepository.save(player);
+        return true;
     }
 
     public Iterable<Player> getAll(){

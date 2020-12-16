@@ -38,16 +38,6 @@ public class RestAppController {
     @Autowired
     private PlayerConverter converter;
 
-    @GetMapping("/player")
-    public ResponseEntity<?> sendPlayer(){
-        return new ResponseEntity<>(new PlayerBuilder().setAge(24)
-                .setCurrentClub(Club.REAL_MADRID)
-                .setPosition(Position.GOALKEEPER)
-                .setName("Alexandro Doneckiy")
-        .build(),
-                HttpStatus.OK);
-    }
-
     @PostMapping("/add")
     public ResponseEntity<String> addPlayer(@RequestBody PlayerDTO playerDTO){
         logger.info(playerDTO);
@@ -55,7 +45,9 @@ public class RestAppController {
         logger.info(player);
         if(!validator.isValidPlayer(player))
             return ResponseEntity.status(400).body("Some player characteristics are invalid");
-        repositoryService.add(player);
+        if(!repositoryService.add(player)){
+            return ResponseEntity.status(400).body("Player with name `" + player.getName() + "` already exists");
+        }
         return ResponseEntity.ok("Player has been added");
     }
 
@@ -67,11 +59,6 @@ public class RestAppController {
     @GetMapping("/getAll")
     public ResponseEntity<Iterable<Player>> getAllPlayers(){
         return ResponseEntity.ok(repositoryService.getAll());
-    }
-
-    @GetMapping("number")
-    public ResponseEntity<Integer> sendNumber(){
-        return ResponseEntity.ok(113);
     }
 
 }
